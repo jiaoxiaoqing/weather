@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="shortcut icon" href="img/logo.png">
+	<!-- 引入icon -->
+	<link rel="stylesheet" href="https://at.alicdn.com/t/font_599229_5ycx5vszegdb1emi.css">
+    <script src="js/rem.js"></script>
+	<script src="js/jquery3.2.1.min.js"></script>
+	<script src="js/index.js"></script>
+	<title>腾讯天气</title>
+</head>
+<body>
+  <div class="bg">
+	<!-- 头部开始 -->
+	<div class="header hide">
+		<div class="city" id="city">北京市</div>
+		<div class="box">
+			<h1>空气</h1>
+			<h2>轻度污染</h2>
+		</div>
+		<div class="temperature">10°</div>
+		<div class="weather_text">晴</div>
+		<div class="humidity">
+			<span>湿度</span>
+			<div>57%</div>   
+		</div>
+		<div class="label">你若安好，便是晴天～</div>
+	</div>
+	<!-- 头部结束 -->
+	<!-- 今明两天天气情况开始 -->
+	<section class="twodays ">
+	    <div class="twodays_box">
+			<div class="today">
+                <div class="top">
+                	<div class="text">今天</div>
+                	<div class="temperature_box">
+                        <span id="dat_high_temperature">17</span>
+                        <span>/</span>
+                        <span id="dat_low_temperature">3°</span>
+                	</div>
+                </div>
+                <div class="bottom">
+                	<div class="bottom_text">晴转多云</div>
+                    <div class="sun"></div>
+                </div>
+			</div>
+			<div class="tomorrow">
+				<div class="tomorrow_top">
+					<div class="top_text">明天</div>
+					<div class="top_temperature">
+                        <span id="tomorrow_high_temperature">17</span>
+                        <span>/</span>
+                        <span id="tomorrow_low_temperature">5°</span>						
+					</div>
+				</div>
+				<div class="tomorrow_bottom">
+					<div class="bottom_text" id="tomorrow_condition">多云</div>
+					<div class="img2"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- 头部结束 -->
+	<!-- 未来24小时天气情况开始 -->
+	<section class="hours ">
+	    <div class="wrap">
+	    	<!-- <div class="now">
+	    		<h2 class="now_time">9:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	        <div class="now">
+	    		<h2 class="now_time">10:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">11:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">12:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">13:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">14:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">15:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">16:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">17:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">18:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">19:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">20:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">21:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">22:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">23:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">00:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">1:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">2:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">3:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">4:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">5:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">6:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">7:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div>
+	    	<div class="now">
+	    		<h2 class="now_time">8:00</h2>
+	    		<div class="now_icon"></div>
+	    		<h2 class="now_temp">9°</h2>
+	    	</div> -->
+	    </div>
+	</section>
+	<!-- 未来24小时天气情况结束 -->
+	<!-- 近期天气开始 -->
+	<div class="recent ">
+	    <div class="huadong">
+			<!-- <div class="day">
+			    <div class="day_date">
+			    	<span id="day_yue">03</span>
+			    	<span>/</span>
+			    	<span id="day_ri">21</span>
+			    </div>
+			    <div class="day_weaH">多云</div>
+			    <div class="day_picH"></div>
+			    <div class="day_high">28°</div>
+			    <div class="day_low">8°</div>
+			    <div class="day_picL"></div>
+			    <div class="day_weaL">阴</div>
+			    <div class="day_wind">南风</div>
+			    <div class="day_level">3级</div>
+			</div>
+			<div class="day">
+			    <div class="day_date">
+			    	<span>03</span>
+			    	<span>/</span>
+			    	<span>21</span>
+			    </div>			
+			    <div class="day_weaH">多云</div>
+			    <div class="day_picH"></div>
+			    <div class="day_high">28°</div>
+			    <div class="day_low">8°</div>
+			    <div class="day_picL"></div>
+			    <div class="day_weaL">阴</div>
+			    <div class="day_wind">南风</div>
+			    <div class="day_level">3级</div>
+			</div>
+			<div class="day">
+			    <div class="day_date">
+			    	<span>03</span>
+			    	<span>/</span>
+			    	<span>21</span>
+			    </div>			
+			    <div class="day_weaH">多云</div>
+			    <div class="day_picH"></div>
+			    <div class="day_high">28°</div>
+			    <div class="day_low">8°</div>
+			    <div class="day_picL"></div>
+			    <div class="day_weaL">阴</div>
+			    <div class="day_wind">南风</div>
+			    <div class="day_level">3级</div>			
+			</div>
+			<div class="day">
+			    <div class="day_date">
+			    	<span>03</span>
+			    	<span>/</span>
+			    	<span>21</span>
+			    </div>			
+			    <div class="day_weaH">多云</div>
+			    <div class="day_picH"></div>
+			    <div class="day_high">28°</div>
+			    <div class="day_low">8°</div>
+			    <div class="day_picL"></div>
+			    <div class="day_weaL">阴</div>
+			    <div class="day_wind">南风</div>
+			    <div class="day_level">3级</div>			
+			</div>
+			<div class="day">
+			    <div class="day_date">
+			    	<span>03</span>
+			    	<span>/</span>
+			    	<span>21</span>
+			    </div>			
+			    <div class="day_weaH">多云</div>
+			    <div class="day_picH"></div>
+			    <div class="day_high">28°</div>
+			    <div class="day_low">8°</div>
+			    <div class="day_picL"></div>
+			    <div class="day_weaL">阴</div>
+			    <div class="day_wind">南风</div>
+			    <div class="day_level">3级</div>			
+			</div>
+			<div class="day">
+			    <div class="day_date">
+			    	<span>03</span>
+			    	<span>/</span>
+			    	<span>21</span>
+			    </div>			
+			    <div class="day_weaH">多云</div>
+			    <div class="day_picH"></div>
+			    <div class="day_high">28°</div>
+			    <div class="day_low">8°</div>
+			    <div class="day_picL"></div>
+			    <div class="day_weaL">阴</div>
+			    <div class="day_wind">南风</div>
+			    <div class="day_level">3级</div>			
+			</div>
+			<div class="day">
+			    <div class="day_date">
+			    	<span>03</span>
+			    	<span>/</span>
+			    	<span>21</span>
+			    </div>			
+			    <div class="day_weaH">多云</div>
+			    <div class="day_picH"></div>
+			    <div class="day_high">28°</div>
+			    <div class="day_low">8°</div>
+			    <div class="day_picL"></div>
+			    <div class="day_weaL">阴</div>
+			    <div class="day_wind">南风</div>
+			    <div class="day_level">3级</div>			
+			</div>
+			<div class="day">
+			    <div class="day_date">
+			    	<span>03</span>
+			    	<span>/</span>
+			    	<span>21</span>
+			    </div>			
+			    <div class="day_weaH">多云</div>
+			    <div class="day_picH"></div>
+			    <div class="day_high">28°</div>
+			    <div class="day_low">8°</div>
+			    <div class="day_picL"></div>
+			    <div class="day_weaL">阴</div>
+			    <div class="day_wind">南风</div>
+			    <div class="day_level">3级</div>			
+			</div> -->
+	    </div>
+	</div>
+	<!-- 提醒开始 -->
+	<div class="footer ">
+		<ul class="tiixng">
+			<li>
+				<div class="icon1">
+					<i class="iconfont icon-qiche"></i>
+				</div>
+				<div class="text">3和8</div>
+				<div class="text">尾号限行</div>
+			</li>
+			<li>
+				<div class="icon2">
+					<i class="iconfont icon-yifu"></i>
+				</div>
+				<div class="text">较冷</div>
+				<div class="text">穿衣</div>
+			</li>
+			<li>
+				<div class="icon3">
+					<i class="iconfont icon-73"></i>
+				</div>
+				<div class="text">不带伞</div>
+				<div class="text">雨伞</div>
+			</li>
+			<li>
+				<div class="icon4">
+					<i class="iconfont icon-jiaonang"></i>
+				</div>
+				<div class="text">较易发</div>
+				<div class="text">感冒</div>
+			</li>
+			<li>
+				<div class="icon5">
+					<i class="iconfont icon-xiche"></i>
+				</div>
+				<div class="text">较适宜</div>
+				<div class="text">洗车</div>
+			</li>
+			<li>
+				<div class="icon6">
+					<i class="iconfont icon-yundong"></i>
+				</div>
+				<div class="text">适宜</div>
+				<div class="text">运动</div>
+			</li>
+			<li>
+				<div class="icon7">
+					<i class="iconfont icon-iconset0451"></i>
+				</div>
+				<div class="text">较弱</div>
+				<div class="text">防晒</div>
+			</li>
+			<li>
+				<div class="icon8">
+					<i class="iconfont icon-yu"></i>
+				</div>
+				<div class="text">适宜</div>
+				<div class="text">钓鱼</div>
+			</li>
+			
+		</ul>
+	</div>
+	<!-- <ul class="about ">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul> -->
+	<!-- 提醒结束 -->
+	<section class="footer1">
+        <div class="footer1_text">
+            <div class="footer_left">数据来源于中国天气网</div>
+            <a class="fankui">反馈</a>
+            <span class="shuxian">|</span>
+            <a class="jubao">举报中心</a>
+        </div>
+        <div class="text2">Copyright © 1998 - 2018 Tencent. All Rights Reserved</div>
+    </section>
+  </div>
+	<!-- 城市开始 -->
+	<section class="location" id="location">
+	    <!-- 搜索开始 -->
+		<div class="search">
+			<div class="search_box">
+				<div class="search_left">
+					<i class="iconfont icon-unie036"></i>
+					<input type="text" placeholder="搜索地区/景点">
+				</div>
+				<div class="search_right" id="quxiao">取消</div>
+			</div>
+		</div>
+		<!-- 搜索结束 -->
+		<!-- 热门城市开始 -->
+		<div class="hotcity_box">
+		<div class="hotcity">热门城市</div>
+				<ul class="hotcitys_box">
+					<li class="hotcitys">北京</li>
+					<li >上海</li>
+					<li >广州</li>
+					<li >深圳</li>
+					<li >郑州</li>
+					<li >西安</li>
+					<li >南京</li>
+					<li >杭州</li>
+					<li >武汉</li>
+					<li >成都</li>
+					<li >沈阳</li>
+					<li >天津</li>
+				</ul>
+		</div>
+		<!-- <div class="hotarea_box">
+			<div class="hotarea">热门景点</div>
+				<ul class="hotareas">
+					<li>故宫</li>
+					<li>颐和园</li>
+					<li>九寨沟</li>
+					<li>凤凰古城</li>
+					<li>秦始皇陵</li>
+					<li>龙门石窟</li>
+					<li>武陵源</li>
+					<li>华山</li>
+					<li>黄山</li>
+				</ul>
+		</div> -->
+	</section>
+	
+</body>
+</html>

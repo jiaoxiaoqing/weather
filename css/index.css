@@ -1,0 +1,666 @@
+/*
+* @Author: Administrator
+* @Date:   2018-03-24 08:20:39
+* @Last Modified by:   Administrator
+* @Last Modified time: 2018-04-11 16:03:24
+*/
+.bg{
+	display: none;
+}
+.block{
+	display: block;
+}
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+body{
+	background: #f4f4f4;
+}
+.header{
+	width: 100%;
+	height: 4.7rem;
+	background: red;
+	background: url('../img/screen.png') no-repeat center bottom,-webkit-linear-gradient(top,#323d7c,#3861a1,#3d7dbd,#5793bb);
+	background-size: contain;
+	overflow: hidden;
+}
+.city{
+	font-size: 0.2rem;
+	color: #fff;
+	margin-top: 0.12rem;
+	line-height: 0.24rem;
+	text-align: center;
+}
+.box{
+	width: 0.72rem;
+	height: 0.44rem;
+	background: #f1ab62;
+	border-radius: 0.08rem;
+	margin: 0.29rem 0 0 0.08rem;
+	overflow: hidden;
+}
+.box h1{
+	font-size: 0.12rem;
+	color: #fff;
+	text-align: center;
+	line-height: 0.16rem;
+	margin-top: 0.06rem;
+	font-weight: normal;
+}
+.box h2{
+	font-size: 0.12rem;
+	color: #fff;
+	text-align: center;
+	line-height: 0.16rem;
+	font-weight: normal;
+}
+.temperature{
+	font-size: 0.48rem;
+	color: #fff;
+	/* text-align: center; */
+	margin-left: 2.22rem;
+	width: 0.9rem;
+	line-height: 0.64rem;
+	margin-top: 0.05rem;
+
+}
+.weather_text{
+	font-size: 0.2rem;
+	color: #fff;
+	text-align: center;
+	line-height: 0.38rem;
+}
+.humidity{
+	width: 0.64rem;
+	height: 0.2rem;
+	margin: 0 auto;
+}
+.humidity span{
+	font-size: 0.14rem;
+	color: #fff;
+	line-height: 0.2rem;
+	float: left;
+}
+.humidity div{
+	font-size: 0.14rem;
+	color: #fff;
+	line-height: 0.2rem;
+	float: left;
+	margin-left: 0.04rem;
+}
+.label{
+	font-size: 0.16rem;
+	color: #fff;
+	line-height: 0.24rem;
+	text-align: center;
+	margin-top: 0.47rem;
+}
+.twodays{
+	width: 100%;
+	height: 1.02rem;
+	background: #fff;
+	border-bottom: 0.01rem solid #e4e4e4;
+	overflow: hidden;
+	margin-bottom: 0.1rem;
+
+}
+.twodays_box{
+	width: 4.61rem;
+	height: 0.52rem;
+	margin: 0.26rem auto 0;
+	display: flex;
+}
+.today{
+	width: 2.3rem;
+	height: 0.52rem;
+	border-right: 0.01rem solid #f0f0f0;
+}
+
+
+.top{
+	width: 100%;
+	height: 0.16rem;
+	margin-bottom: 0.04rem;
+	/* 弹性布局 */
+	display: flex;
+	/* 子元素在主轴方向的对齐方式     两端对齐 */
+	justify-content: space-between;
+/* 	padding-right: 0.2rem;
+	box-sizing: border-box; */
+}
+.text{
+	font-size: 0.14rem;
+	color: #434343;
+}
+.temperature_box{
+	height: 0.16rem;
+	margin-right: 0.2rem;	
+}
+.temperature_box span{
+	font-size: 0.12rem;
+	color: #434343;
+	float: left;
+}
+.bottom{
+	width: 100%;
+	height: 0.32rem;
+		/* 弹性布局 */
+	display: flex;
+	/* 子元素在主轴方向的对齐方式     两端对齐 */
+	justify-content: space-between;
+}
+.bottom_text{
+	font-size: 0.14rem;
+	color: #434343;
+	line-height: 0.32rem;
+}
+.sun{
+	width: 0.3rem;
+	height: 0.3rem;
+	background: url('../img/0.png') no-repeat center;
+	background-size: cover;
+	margin-right: 0.21rem;
+}
+/* 明天天气 */
+.tomorrow{
+	width: 2.49rem;
+	height: 0.52rem;
+}
+/* 明天-上部 */
+.tomorrow_top{
+	width: 2.3rem;
+	height: 0.16rem;
+	margin-left: 0.19rem;
+	margin-bottom: .04rem;
+		/* 弹性布局 */
+	display: flex;
+	/* 子元素在主轴方向的对齐方式     两端对齐 */
+	justify-content: space-between;
+}
+.top_text{
+	font-size: 0.14rem;
+	color: #434343;
+}
+.top_temperature{
+	height: 0.16rem;
+	margin-right: 0.2rem;	
+}
+.top_temperature span{
+	font-size: 0.12rem;
+	color: #434343;
+	float: left;
+}
+.tomorrow_bottom{
+	width: 100%;
+	height: 0.32rem;
+	margin-left: 0.19rem;
+		/* 弹性布局 */
+	display: flex;
+	/* 子元素在主轴方向的对齐方式     两端对齐 */
+	justify-content: space-between;
+}
+.bottom_text{
+	font-size: 0.14rem;
+	color: #434343;
+	line-height: 0.32rem;
+}
+.img2{
+	width: 0.3rem;
+	height: 0.3rem;
+	background: url('../img/1.png') no-repeat center;
+	background-size: cover;
+	margin-right: 0.41rem;
+}
+/* 未来24小时天气情况开始 */
+.hours{
+	width: 100%;
+	height: 1.36rem;
+	background: #fff;
+	border-bottom: 0.01rem solid #f0f0f0;
+	/* 超出部分的设置（水平方向）自动 */
+	overflow-x: auto;
+	padding-top: 0.3rem;
+	/* 用此元素时  边框要量在内 */
+	box-sizing: border-box;
+	margin-bottom: 0.1rem;
+}
+/* 去掉滚动条 */
+.hours::-webkit-scrollbar{
+	height: 0;
+}
+/* 父元素 容器（在弹性布局里的专业名称） */
+.wrap{
+	height: 0.78rem;
+    /* width: 10rem; */
+    display: flex;
+
+}
+/* 子元素 项目（在弹性布局里的专业名称） */
+.wrap .now{
+    width: 0.77rem;
+    height: 0.78rem;
+    /* 缩小值 0 */
+    flex-shrink: 0;
+    /* padding-left: 0.23rem; */
+    display: flex;
+    flex-wrap:wrap;
+    /* 改变主轴方向  垂直方向 */
+    flex-direction:column;
+    justify-content: space-between;
+}
+.now .now_time{
+	width: 100%;
+	font-size: 0.1rem;
+	color: #999999;
+	text-align: center;
+}
+.now .now_icon{
+	width: 0.22rem;
+	height: 0.22rem;
+	margin: 0 auto;
+	background: url('../img/0.png') no-repeat center;
+	background-size: cover;
+}
+.now .now_temp{
+	width: 100%;
+	font-size: 0.1rem;
+	color: #999999;
+	text-align: center;
+}
+.recent{
+	width: 100%;
+	height: 3.91rem;
+	background: #fff;
+	border-top: 0.01rem solid #e4e4e4;
+	border-bottom: 0.01rem solid #e4e4e4;
+	padding-top: 0.25rem;
+	/* 用此元素时  边框要量在内 */
+	box-sizing: border-box;
+	overflow-x: auto;
+	display: flex;
+	margin-bottom: 0.1rem;
+}
+.day{
+	width: 10rem;
+	height: 3.36rem;
+}
+.recent::-webkit-scrollbar{
+	height: 0;
+}
+/* 父元素 容器（在弹性布局里的专业名称） */
+.huadong{
+	height: 3.36rem;
+    width: 10rem;
+    display: flex;
+
+}
+/* 子元素 项目（在弹性布局里的专业名称） */
+.day{
+    width: 0.83rem;
+    height: 3.36rem;
+     /* 缩小值 0  */
+    flex-shrink: 0;
+    display: flex;
+    /* 换行 */
+    flex-wrap:wrap;
+     /* 改变主轴方向  垂直方向  */
+    flex-direction:column;
+    /* 子元素在主轴方向的对齐方式   两端对齐 */
+    justify-content: space-between;
+} 
+.day_date{
+	width: 100%;
+	height: 0.14rem;
+	font-size: 0.14rem;
+	color: #434343;
+	text-align: center;
+	line-height: 0.14rem;
+}
+.day_date span{
+	font-size: 0.14rem;
+	color: #434343;
+	float: left;
+	line-height: 0.14rem;
+}
+.day_date span:first-child{
+	margin-left: 0.26rem;
+}
+.day_weaH{
+	width: 100%;
+	font-size: 0.14rem;
+	color: #434343;
+	text-align: center;
+}
+.day_picH{
+	width: 0.22rem;
+	height: 0.22rem;
+	margin: 0 auto;
+	background: url('../img/0.png') no-repeat center;
+	background-size: cover;
+}
+.day_high{
+	width: 100%;
+	font-size: 0.14rem;
+	color: #434343;
+	text-align: center;
+}
+.day_low{
+	width: 100%;
+	font-size: 0.14rem;
+	color: #434343;
+	text-align: center;
+}
+.day_picL{
+	width: 0.22rem;
+	height: 0.22rem;
+	margin: 0 auto;
+	background: url('../img/0.png') no-repeat center;
+	background-size: cover;
+}
+.day_weaL{
+	width: 100%;
+	font-size: 0.14rem;
+	color: #434343;
+	text-align: center;
+}
+.day_wind{
+	width: 100%;
+	font-size: 0.12rem;
+	color: #434343;
+	text-align: center;
+}
+.day_level{
+	width: 100%;
+	font-size: 0.12rem;
+	color: #434343;
+	text-align: center;
+}
+.footer{
+    width: 4.99rem;
+    height: 1.89rem;
+    background: #fff;
+    border-left: : 0.01rem solid #e6e6e6;
+    border-top: 0.01rem solid #e6e6e6;
+    display: flex;
+     flex-wrap:wrap;
+     /* 改变主轴方向  垂直方向  */
+    flex-direction:column;
+    /* 子元素在主轴方向的对齐方式   两端对齐 */
+    /* justify-content: space-between; */
+}
+.tiixng li{
+	width: 1.236rem;
+	height: 0.93rem;
+    border-right: 0.01rem solid #e6e6e6;
+    border-bottom: 0.01rem solid #e6e6e6;
+    display: flex;
+    /* 换行 */
+    flex-wrap:wrap;
+     /* 改变主轴方向  垂直方向  */
+    flex-direction:column;
+    /* 子元素在主轴方向的对齐方式   两端对齐 */
+    justify-content: space-between;
+    float: left;
+}
+.icon1 i{
+	font-size:  0.2rem;
+	color: #a4ade0;
+    float: left;
+    margin-left: 0.5rem;
+}
+.icon2 i{
+	font-size:  0.2rem;
+	color: #e1a4c4;
+	float: left;
+	margin-left: 0.5rem;
+}
+.icon3 i{
+	font-size:  0.2rem;
+	color: #c1a4e0;
+	float: left;
+	margin-left: 0.5rem;
+}
+.icon4 i{
+	font-size:  0.2rem;
+	color: #dfc79c;
+	float: left;
+	margin-left: 0.5rem;
+}
+.icon5 i{
+	font-size:  0.2rem;
+	color: #b5e6a8;
+	float: left;
+	margin-left: 0.5rem;
+}
+.icon6 i{
+	font-size:  0.2rem;
+	color: #e6d99d;
+	float: left;
+	margin-left: 0.5rem;
+}
+.icon7 i{
+	font-size:  0.2rem;
+	color: #dbada0;
+	float: left;
+	margin-left: 0.5rem;
+}
+.icon8 i{
+	font-size:  0.2rem;
+	color: #a3dfd4;
+	float: left;
+	margin-left: 0.5rem;
+}
+.tiixng li .text{
+    font-size: 0.14rem;
+    color: #4e4e4e;
+    text-align: center;
+   
+}
+.tiixng li .text{
+	font-size: 0.12rem;
+	color: #999;
+	text-align: center;
+}
+.location{
+	width: 100%;
+	height: auto ;
+	background: #fff;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding-left: 0.13rem;
+	box-sizing: border-box;
+    /* 让此元素消失 */
+	/* display: none; */
+    /* overflow-y: auto; */
+}
+.search{
+	width: 4.9rem;
+	height: 0.45rem;
+	background: #fff;
+	border-bottom: 0.01rem solid #eeeeee;
+	padding-top: 0.07rem;
+	box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:999;
+    padding-left: 0.13rem;
+}
+.search_box{
+	width: 4.73rem;
+	height: 0.3rem;
+}
+.search_left{
+	width: 4.27rem;
+	height: 100%;
+	background: #f2f2f2;
+	float: left;
+	border-radius: 0.2rem;
+}
+.search_right{
+	width: 0.38rem;
+	height: 100%;
+	float: right;
+	font-size: 0.17rem;
+	color: #434343;
+	text-align: center;
+	line-height: 0.3rem;
+}
+.search_left i{
+	font-size: 0.25rem;
+	color: #9d9d9d;
+	margin-left: 0.1rem;
+	float: left;
+}
+.search_left input{
+	float: right;
+	width: 3.92rem;
+	height: 0.3rem;
+	border: none;
+	background: #f2f2f2;
+	border-top-right-radius:0.15rem ;
+	border-bottom-right-radius: 0.15rem;
+}
+/* 获取焦点（去掉input黄色边框） */
+input:focus{
+	/* 外边线消失 */
+	outline: none;
+}
+.hotcity_box{
+	width: 4.87rem;
+    height: auto;
+	margin-top: 0.45rem;
+	overflow: hidden;
+}
+.hotcity{
+	width:4.87rem;
+	height: 0.46rem;
+	margin-top: 0.08rem;
+	font-size: 0.16rem;
+	color: #434343;
+	line-height: 0.46rem;
+}
+.hotcitys_box{
+	width: 4.87rem;
+	height: auto;
+	overflow: hidden;
+}
+.hotcitys_box li{
+	width: 1.52rem;
+	height: 0.32rem;
+	background: #f2f2f2;
+	border-radius: 0.16rem;
+	float: left;
+	margin-right: 0.09rem;
+	font-size: 0.14rem;
+	color: #434343;
+	text-align: center;
+	line-height: 0.32rem;
+	margin-top: 0.12rem;
+}
+.hotcitys_box li:nth-child(3n){
+	border-right: none;
+}
+.hotarea_box{
+	width: 4.87rem;
+	height: 1.74rem;
+}
+.hotarea{
+	width: 4.87rem;
+	height: 0.38rem;
+	font-size: 0.16rem;
+	color: #434343;
+	line-height: 0.38rem;
+	margin-bottom: 0.04rem;
+}
+.hotareas{
+	width: 4.87rem;
+	height: 1.32rem;
+}
+.hotareas li{
+	width: 1.52rem;
+	height: 0.32rem;
+	background: #f2f2f2;
+	border-radius: 0.16rem;
+	float: left;
+	margin-right: 0.09rem;
+	font-size: 0.14rem;
+	color: #434343;
+	text-align: center;
+	line-height: 0.32rem;
+	margin-bottom: 0.12rem;
+}
+.footer1{
+	width: 100%;
+	height: 1rem;
+}
+.footer1_text{
+	width:100%;
+	height:0.2rem;
+	margin-top:0.37rem;
+}
+.footer_left{
+	width:1.4rem;
+	height:0.2rem;
+	float: left;
+	margin-left: 1.2rem;
+	font-size: 0.11rem;
+	color: #999999;
+}
+.fankui{
+	display: block;
+	width:0.3rem;
+	height:0.2rem;
+	float: left;
+	margin-left: 0.1rem;
+	font-size: 0.11rem;
+	color: #999999;
+}
+.shuxian{
+	width:0.2rem;
+	height:0.2rem;
+	float: left;
+	font-size: 0.11rem;
+	color: #999999;
+}
+.jubao{
+	width:0.55rem;
+	height:0.2rem;
+	float: left;
+	font-size: 0.11rem;
+	color: #999999;
+}
+.text2{
+	width:100%;
+	height:0.13rem;
+	margin-top:0.1rem;
+	font-size: 0.11rem;
+	text-align: center;
+	color: #999999;
+}
+.about{
+	width: 100%;
+	height: 1.9rem;
+	background: deeppink;
+	border: 0.01rem solid #e4e4e4;
+	/* 自定义盒子模型   使边框成为内边框 */
+	box-sizing: border-box;
+}
+.about li{
+	width: 25%;
+	height: 0.94rem;
+	background: skyblue;
+	float: left;
+	border-right: 0.01rem solid #e4e4e4;
+	border-bottom: 0.01rem solid #e4e4e4;
+	box-sizing: border-box;
+}
+.about li:nth-child(4n){
+	border-right: none;
+}
